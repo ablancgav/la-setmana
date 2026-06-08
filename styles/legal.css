@@ -1,0 +1,239 @@
+/* =========================
+   PÀGINES LEGALS
+========================= */
+/* =========== imatge esquerra =========== */
+.legal__img-wrapper {
+  grid-column: 1 / 6;
+  height: calc(100vh - calc((var(--space-4) * 2) + var(--space-6)));
+  align-self: start; 
+}
+
+.legal__img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* =========== contingut dreta =========== */
+.legal__content {
+  grid-column: 6 / 13;
+  padding: var(--space-6) var(--space-7) var(--space-6) 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  margin-left: var(--space-2);
+}
+
+.legal__text {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.legal__text h4 {
+  margin-top: var(--space-4);
+  margin-bottom: 0;
+}
+
+.legal__text h5 {
+  margin-top: var(--space-2);
+  margin-bottom: 0;
+}
+
+.legal__text a {
+  font-size: var(--font-body);
+}
+
+.checkbox-cookie {
+  appearance: none; 
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  flex-shrink: 0;
+  background-image: url("../media/icons/checkbox-empty.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+}
+
+.ajuda {
+  width: 18px;
+  height: 18px;
+}
+
+.checkbox-cookie:checked {
+  background-image: url("../media/icons/checkbox-filled.svg");
+}
+
+.cookie-item {
+  margin-bottom: var(--space-2);
+}
+
+.cookie-item summary {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: #E2E1EC;
+  padding: var(--space-2) var(--space-3);
+}
+
+.cookie-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.summary-right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.cookie-item .arrow {
+  width: 16px;
+  transition: transform 0.3s;
+}
+
+.cookie-item[open] .arrow {
+  transform: rotate(180deg);
+}
+
+.cookie-item > p {
+  padding: var(--space-2) var(--space-3);
+  background-color: var(--color-blue-00);
+}
+
+
+/* =========================
+   RESPONSIVE PÀGINES LEGALS
+========================= */
+/* =========== TABLET =========== */
+@media only screen and (max-width: 1100px) {
+  .legal__img-wrapper {
+    grid-column: 1 / 5; 
+    height: calc(100vh - 80px);
+  }
+
+  .legal__content {
+    grid-column: 5 / 9; 
+    padding: var(--space-5) var(--space-5) var(--space-5) 0;
+  }
+}
+
+/* =========== MÒBIL =========== */
+@media only screen and (max-width: 768px) {
+  .legal-layout {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .legal__img-wrapper {
+    height: auto;
+    aspect-ratio: 16 / 9;
+    align-self: auto;
+  }
+
+  .legal__content {
+    padding: var(--space-4);
+    gap: var(--space-4);
+  }
+  
+  .legal__text {
+    width: 100%;
+  }
+}
+
+
+/* =========================
+   PÀGINA D'ERROR 404
+========================= */
+/* =========== IMATGE ESQUERRA =========== */
+.hero-404__img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* =========== CONTINGUT DRETA =========== */
+.hero-404__content {
+  grid-column: 6 / 13;
+  padding: var(--space-6) var(--space-7) var(--space-6) 0;
+  margin-left: var(--space-2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--space-6);
+}
+
+.error-text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.error-text h1,
+.error-text h2 {
+  margin: 0;
+}
+
+.error-text .error-body {
+  max-width: 80%;
+  font-family: "Helvetica Now Text", sans-serif;
+  font-size: var(--font-h5);
+  line-height: var(--line-tight);
+  font-weight: 400;
+}
+
+
+/* =========================
+   RESPONSIVE ERROR404
+========================= */
+/* =========== TABLET =========== */
+@media only screen and (max-width: 1100px) {
+  
+  .hero-404 {
+    min-height: max-content;
+  }
+  
+  .hero-404__img-wrapper {
+    grid-column: 1 / 5; 
+  }
+
+  .hero-404__content {
+    grid-column: 5 / 9; 
+    padding: var(--space-5) var(--space-5) var(--space-5) 0;
+  }
+  
+}
+/* =========== MÒBIL =========== */
+@media only screen and (max-width: 768px) {
+  
+  .hero-404 {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero-404__img-wrapper {
+    grid-column: 1 / -1;
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+
+  .hero-404__content {
+    grid-column: 1 / -1; 
+    padding: var(--space-4);
+    gap: var(--space-5);
+  }
+  
+  .hero-404__content .display-1 {
+    font-size: var(--font-h1)
+  }
+  
+  .error-text .error-body {
+    max-width: 100%;
+  }
+}
