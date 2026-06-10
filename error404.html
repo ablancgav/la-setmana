@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ca">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Anna Blancafort Gaviña">
+        <meta name="copyright" content="Propietats del copyright Anna Blancafort Gaviña">
+        <meta name="revised" content="5 de juny de 2026">
+        
+        <title>404 Pàgina no trobada | La Setmana</title>
+        
+        <link rel="stylesheet" href="styles/base.css">
+        <link rel="stylesheet" href="styles/components.css">
+        <link rel="stylesheet" href="styles/legal.css">
+    </head>
+    <body class="page-404">
+      
+       <!-------- CAPÇALERA -------->
+        <header class="header">
+           <div class="container header__container">
+                <!---- LOGO ---->
+                <a href="index.html" class="header__logo">
+                    <img src="media/img/general/logotip_la-setmana.svg" alt="La Setmana del Llibre en Català">
+                 </a>
+                <!---- MENÚ HAMBURGUESA ---->
+                <button class="header__toggle" type="button" aria-label="Obrir menú" aria-expanded="false" aria-controls="menu-principal">
+                    <img src="media/icons/menu-hamburguesa.svg" alt="Obrir menú" class="icon-menu">
+                    <img src="media/icons/tancar.svg" alt="Tancar menú" class="icon-close">
+                </button>
+                <!---- MENÚ ---->
+                <nav class="header__nav">
+                    <ul class="header__menu">
+                        <li><a href="programacio.html" class="link-arrow"><span class="link-text">Programació</span></a></li>
+                        <li><a href="error404.html" class="link-arrow"><span class="link-text">Rutes guiades</span></a></li>
+                        <li><a href="qui-som.html" class="link-arrow"><span class="link-text">Qui som</span></a></li>
+                        <li><a href="error404.html" class="link-arrow"><span class="link-text">Notícies</span></a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        
+       
+       <!-------- CONTINGUT PRINCIPAL -------->
+       <main>
+           <section class="legal-layout grid-12">
+                <div class="legal__img-wrapper">
+                    <img src="media/img/general/bg_la-setmana.png" alt="Política de cookies La Setmana">
+                </div>
+               
+               <div class="hero-404__content">
+                   <div class="error-text">
+                       <h1 class="display-1">404</h1>
+                       <h2>Pàgina no trobada</h2>
+                       <p class="error-body">Sembla que el llibre que busques no es troba en aquesta prestatgeria o la pàgina ha canviat de lloc.</p>
+                   </div>
+                   
+                   <a href="index.html" class="btn btn--outline">
+                       <span>Torna a l'inici</span>
+                       <img src="media/icons/fletxa-dreta.svg" alt="Fletxa dreta">
+                   </a>
+               </div>
+
+           </section>
+       </main>
+       
+    </body>
+</html>
