@@ -1,0 +1,620 @@
+/* =========================
+   HERO PROGRAMACIÓ
+========================= */
+/* =========== ESQUERRA =========== */
+.hero-prog__left {
+  grid-column: 1 / 8;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.hero-prog__date {
+  font-weight: 700;
+  color: var(--color-black);
+}
+
+.hero-prog__title {
+  margin: 0;
+}
+
+/* =========== DRETA =========== */
+.hero-prog__right {
+  grid-column: 8 / 13;
+  display: flex;
+  flex-direction: column;
+  padding-top: calc(var(--space-6) + var(--space-2));
+  gap: var(--space-4);
+}
+
+.filter-bar {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--space-4);
+  width: 100%;
+}
+
+.btn-filter {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  padding-bottom: var(--space-1);
+  font-family: inherit;
+  font-size: var(--font-body);
+  font-weight: 400;
+  color: var(--color-black);
+  white-space: nowrap;
+}
+
+.search-bar {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-bar__icon {
+  position: absolute;
+  left: var(--space-2);
+  width: 1.375rem;
+  height: 1.375rem;
+}
+
+.search-bar input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid var(--color-black);
+  background: transparent;
+  padding: var(--space-2) var(--space-2) var(--space-2) calc(2 * var(--space-2) + var(--space-4));
+  font-family: inherit;
+  font-size: var(--font-body);
+  outline: none;
+}
+
+.search-bar input::placeholder {
+  color: var(--color-blue-00);
+}
+
+.filter-dropdown {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: var(--space-4);
+  width: 100%;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.5s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.4s ease, margin-top 0.4s ease;
+}
+
+.filter-dropdown.is-open {
+  max-height: 400px;
+  opacity: 1;
+  margin-top: var(--space-3);
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.filter-group strong {
+  font-size: var(--font-body);
+}
+
+.filter-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2); 
+}
+
+.filter-tag {
+  background-color: var(--color-blue-100);
+  color: var(--color-white);
+  font-family: inherit;
+  font-size: var(--font-body-small);
+  padding: var(--space-1) var(--space-2);
+  border: none;
+  border-radius: var(--border-1);
+  cursor: pointer;
+  transition: var(--transition-global);
+  white-space: nowrap;
+}
+
+.filter-tag:hover {
+  background-color: var(--color-blue-300);
+}
+
+.filter-tag--active {
+  background-color: var(--color-blue-300);
+  font-weight: 700; 
+}
+
+
+/* =========================
+   CONTINGUT PRINCIPAL
+========================= */
+
+.programacio__llistat {
+  grid-column: 1 / 9;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-7);
+}
+
+.programacio__mapa {
+  grid-column: 9 / 13;
+}
+
+.mapa-sticky {
+  position: sticky;
+  top: calc((var(--space-4) * 4) + var(--space-6));
+  max-height: calc(100vh - ((var(--space-4) * 4) + var(--space-6))); 
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.mapa-sticky::-webkit-scrollbar {
+  width: 4px;
+}
+.mapa-sticky::-webkit-scrollbar-track {
+  background: transparent;
+}
+.mapa-sticky::-webkit-scrollbar-thumb {
+  background-color: var(--color-blue-00);
+  border-radius: var(--border-1);
+}
+.mapa-sticky::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-blue-100);
+}
+
+.mapa-img {
+  width: 100%;
+  height: auto;
+}
+
+.dia-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  border-bottom: 1px solid var(--color-blue-100);
+  padding-bottom: var(--space-3);
+  width: 100%;
+}
+
+.dia-header .dia-title {
+  margin: 0;
+  padding-left: var(--space-2);
+  color: var(--color-blue-00);
+  font-family: "PP Fragment Glare", serif;
+  font-weight: 800;
+  line-height: var(--line-tight);
+  font-size: var(--font-h2);
+  transition: color 0.3s ease;
+}
+
+.dia-header:hover .dia-title,
+.dia-group--active .dia-header .dia-title {
+  color: var(--color-black);
+}
+
+.dia-icon {
+  width: var(--space-6);
+  height: var(--space-6);
+  filter: invert(84%) sepia(7%) saturate(225%) hue-rotate(203deg) brightness(92%) contrast(89%);
+  transition: filter 0.3s ease;
+}
+
+.dia-header:hover .dia-icon,
+.dia-group--active .dia-header .dia-icon {
+  filter: none;
+}
+
+.dia-content {
+  display: flex;
+  flex-direction: column;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.8s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.5s ease;
+}
+
+.dia-group--active .dia-content {
+  max-height: 6000px;
+  opacity: 1;
+}
+
+/* =========== TARGETA D'ACTIVITAT =========== */
+.activitat {
+  display: grid;
+  grid-template-columns: 2fr 6fr; 
+  padding: var(--space-4) 0;
+  gap: var(--space-4);
+  border-bottom: 1px solid var(--color-blue-100);
+  align-items: start; 
+}
+
+/*.activitat:last-child {
+  border-bottom: none;
+}*/
+
+.activitat__img {
+  aspect-ratio: 3 / 4;
+}
+
+.activitat__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.activitat__info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8); 
+}
+
+.activitat__hora h3 {
+  margin: 0;
+}
+
+.activitat__inferior {
+  display: grid;
+  grid-template-columns: 1fr 5fr; 
+  gap: var(--space-4);
+}
+
+.activitat__tags {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-2);
+  margin-top: var(--space-1);
+}
+
+.tag {
+  background-color: var(--color-blue-300);
+  color: var(--color-white);
+  font-size: var(--font-body-small);
+  font-weight: 700; 
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--border-1);
+}
+
+.activitat__contingut {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.activitat__contingut h4 {
+  margin: 0;
+}
+
+.activitat__botons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+/* =========== PART EXPANDIBLE (MÉS INFO) =========== */
+.activitat__extra {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.5s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.4s ease, margin-top 0.4s ease;
+}
+
+.activitat--expanded .activitat__extra {
+  max-height: 1500px;
+  opacity: 1;
+  margin-top: var(--space-3);
+}
+
+.extra__icons {
+  display: flex;
+  gap: var(--space-3);
+}
+
+.extra__icon-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--font-body-small);
+}
+
+.extra__icon-item img {
+  width: var(--space-3);
+  height: var(--space-3);
+}
+
+.extra__desc {
+  font-size: var(--font-body);
+  margin: 0;
+}
+
+.extra__detalls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3) var(--space-4);
+}
+
+.detall-col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.detall-titol {
+  font-size: var(--font-body-small);
+  color: var(--color-blue-100);
+}
+
+.detall-text {
+  font-size: var(--font-body-small);
+  color: var(--color-black);
+}
+
+
+/* =========================
+   RESPONSIVE PROGRAMACIÓ
+========================= */
+/* =========== TABLET =========== */
+@media only screen and (max-width: 1100px) {
+  
+  .hero-prog__left {
+    grid-column: 1 / 5;
+  }
+
+  .hero-prog__right {
+    grid-column: 5 / 9;
+    padding-top: calc(var(--space-3) + var(--space-4)); 
+  }
+
+  .programacio__mapa {
+    display: none;
+  }
+
+  .programacio__llistat {
+    grid-column: 1 / 9;
+  }
+
+  .activitat__inferior {
+    grid-template-columns: 1fr 5fr; 
+  }
+  
+  #filter-dropdown.is-open {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    overflow: visible;
+  }
+  
+  .filter-group {
+    gap: var(--space-2);
+  }
+  
+  .filter-list .filter-tag {
+    flex: 0 0 auto;
+    white-space: nowrap;
+    padding: var(--space-2) var(--space-3);
+  }
+}
+
+/* =========== MÒBIL =========== */
+@media only screen and (max-width: 768px) {
+  
+  .hero-prog__left {
+    grid-column: 1 / 5;
+  }
+
+  .hero-prog__right {
+    grid-column: 1 / 5;
+    padding-top: var(--space-3);
+  }
+
+  .filter-bar {
+    gap: var(--space-3)
+  }
+
+  .search-bar {
+    width: 100%;
+  }
+
+  #filter-dropdown.is-open {
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .filter-group {
+    gap: var(--space-2);
+  }
+  
+  .filter-list {
+    margin: 0 calc(var(--space-4) * -1);
+    padding: 0 var(--space-4);
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: var(--space-2);
+    padding-bottom: var(--space-2);
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  
+  .filter-list::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .filter-list .filter-tag {
+    flex: 0 0 auto;
+    white-space: nowrap;
+  }
+  
+  .programacio__llistat {
+    grid-column: 1 / 5;
+  }
+  
+  .programacio__mapa {
+    display: none; 
+  }
+  
+  .activitat {
+    grid-template-columns: 1fr;
+  }
+  
+  .activitat__img {
+    aspect-ratio: 16 / 9; 
+  }
+  
+  .activitat__info {
+    gap: var(--space-3);
+  }
+  
+  .activitat__inferior {
+    
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+  }
+
+  .activitat__tags {
+    flex-direction: row;
+    flex-wrap: wrap; 
+    margin-top: 0;
+  }
+  
+  .activitat__botons {
+    flex-direction: column;
+  }
+  
+  .activitat__botons .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .extra__detalls {
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+}
+
+
+/* ==============================================
+   ESTAT BUIT (EMPTY STATE)
+==============================================*/
+.programacio__empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: left;
+  gap: var(--space-3);
+  padding: var(--space-6) var(--space-4);
+  background-color: var(--color-white);
+  border: 1px dashed var(--color-blue-100);
+  border-radius: var(--border-2);
+}
+
+.programacio__empty-state h3 {
+  margin: 0;
+  color: var(--color-black);
+}
+
+.programacio__empty-state p {
+  color: var(--color-blue-100);
+  margin-bottom: var(--space-2);
+}
+
+
+/* ==============================================
+   CLASSES D'UTILITAT JS
+==============================================*/
+/* Per amagar activitats i dies que no coincideixen amb el filtre */
+.is-hidden {
+  display: none !important;
+}
+
+
+/* ==============================================
+   MODAL CALENDARI
+==============================================*/
+.modal-calendar {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(9, 9, 17, 0.8);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition-global);
+  padding: var(--space-4);
+}
+
+.modal-calendar.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-calendar__content {
+  background-color: var(--color-white);
+  padding: var(--space-5) var(--space-6);
+  border-radius: var(--border-2);
+  width: 100%;
+  max-width: 420px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  box-shadow: var(--shadow-medium);
+}
+
+.modal-calendar__close {
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-3);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: var(--transition-global);
+}
+
+.modal-calendar__close:hover {
+  transform: scale(1.1);
+}
+
+.modal-calendar__options {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.modal-calendar__options .btn {
+  width: 100%;
+  justify-content: center;
+}
+
+/* Mòbil */
+@media only screen and (max-width: 768px) {
+  .modal-calendar__content {
+    padding: var(--space-5) var(--space-4);
+  }
+}
