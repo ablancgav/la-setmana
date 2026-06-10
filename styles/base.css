@@ -137,7 +137,7 @@ img {
   --shadow-dark: 0 10px 40px rgba(9, 9, 17, 0.25);
   
   /* =========== HOVERS =========== */
-  --transition-global: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  --transition-global: all 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 
